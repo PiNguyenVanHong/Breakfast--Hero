@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide Show</title>
+
+    <!-- Link To Remixicon -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <div id="box" class="box">
+        <div class="left">
+          <div class="top">
+            <div id="circle-container" class="circle-container">
+              <div class="circle">
+                <div class="overlay"></div>
+                <img src="images/4.png" class="active" alt="">
+                <img src="images/3.png" alt="">
+                <img src="images/2.png" alt="">
+                <img src="images/5.png" alt="">
+              </div>
+            </div>
+            <div class="food-overview">
+              <ul class="pagination" id="pagination">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <div class="food-content">
+                <div class="food-info-wrapper" id="food-info-wrapper">
+                  <div class="food-info active">
+                    <h5 data-text="#1 Most loved dish">#1 Most loved dish</h5>
+                    <h1 class="food-name" data-text="Pesto Shrimp Broccoli">
+                      Pesto Shrimp Broccoli
+                    </h1>
+                    <p data-text="Stir-Fry">Stir-Fry</p>
+                    <div class="food-action">
+                      <a href="#">
+                        <i class="ri-play-fill"></i>
+                        Play video
+                      </a>
+                      <a href="#">
+                        <i class="ri-restaurant-2-fill"></i>
+                        Order food
+                      </a>
+                    </div>
+                  </div>
+                  <div class="food-info">
+                    <h5 data-text="#2 Most loved dish">#2 Most loved dish</h5>
+                    <h1 class="food-name" data-text="Pork Tonkatsu Asian Cabbage">
+                      Pork Tonkatsu Asian Cabbage
+                    </h1>
+                    <p data-text="Stir-Fry">Stir-Fry</p>
+                    <div class="food-action">
+                      <a href="#">
+                        <i class="ri-play-fill"></i>
+                        Play video
+                      </a>
+                      <a href="#">
+                        <i class="ri-restaurant-2-fill"></i>
+                        Order food
+                      </a>
+                    </div>
+                  </div>
+                  <div class="food-info">
+                    <h5 data-text="#3 Most loved dish">#3 Most loved dish</h5>
+                    <h1 class="food-name" data-text="Savory Hash Breakfast">
+                      Savory Hash Breakfast
+                    </h1>
+                    <p data-text="Stir-Fry">Stir-Fry</p>
+                    <div class="food-action">
+                      <a href="#">
+                        <i class="ri-play-fill"></i>
+                        Play video
+                      </a>
+                      <a href="#">
+                        <i class="ri-restaurant-2-fill"></i>
+                        Order food
+                      </a>
+                    </div>
+                  </div>
+                  <div class="food-info">
+                    <h5 data-text="#4 Most loved dish">#4 Most loved dish</h5>
+                    <h1 class="food-name" data-text="Beef Bourguignon">
+                      Beef Bourguignon
+                    </h1>
+                    <p data-text="Stew & Mashed">Stew & Mashed</p>
+                    <div class="food-action">
+                      <a href="#">
+                        <i class="ri-play-fill"></i>
+                        Play video
+                      </a>
+                      <a href="#">
+                        <i class="ri-restaurant-2-fill"></i>
+                        Order food
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">  
+            <div class="food-actions">
+              <div class="food-list">
+                <div class="slide-wrapper">
+                  <input type="radio" data-index="0" id="radio-1" class="slide-food" name="food" checked>
+                  <label class="slide" for="radio-1">
+                    <img src="images/2.png" alt="">
+                    <span>Food 1</span>
+                  </label>
+                  <input type="radio" data-index="1" id="radio-2" class="slide-food" data-id="1" name="food">
+                  <label class="slide" for="radio-2">
+                    <img src="images/3.png" alt="">
+                    <span>Food 2</span>
+                  </label>
+                  <input type="radio" data-index="2" id="radio-3" class="slide-food" name="food">
+                  <label class="slide" for="radio-3">
+                    <img src="images/4.png" alt="">
+                    <span>Food 3</span>
+                  </label>
+                  <input type="radio" data-index="3" id="radio-4" class="slide-food" name="food">
+                  <label class="slide" for="radio-4">
+                    <img src="images/5.png" alt="">
+                    <span>Food 4</span>
+                  </label>
+                  <span class="glider"></span>
+                </div>
+                <button id="slide-button-prev">
+                  <i class="ri-arrow-drop-left-line"></i>
+                </button>
+                <button id="slide-button-next">
+                  <i class="ri-arrow-drop-right-line"></i>
+                </button>
+              </div>
+              <div class="menu">
+                <ul>
+                  <li><a href="#" class="active">
+                    <i class="ri-restaurant-line"></i>
+                  </a></li>
+                  <li><a href="#">
+                    <i class="ri-goblet-line"></i>
+                  </a></li>
+                  <li><a href="#">
+                    <i class="ri-chat-1-line"></i>
+                  </a></li>
+                  <li><a href="#">
+                    <i class="ri-user-3-line"></i>
+                  </a></li>
+                </ul>
+                <a href="#">
+                  <i class="ri-mic-line"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="search">
+            <a href="#"><i class="ri-search-line"></i></a>
+            <a href="#"><i class="ri-menu-line"></i></a>
+          </div>
+          <div class="box-details">
+            <div class="box-content">
+              <div class="tab">
+                <a class="active" href="#">Overview</a>
+                <a href="#">Ingredients</a>
+              </div>
+              <div class="rate-count">
+                <div>
+                  <i class="ri-star-s-fill"></i>
+                </div>
+                <h3>
+                  <div id="rate-wrapper">
+                    <p class="active">4.1</p>
+                    <p>4.2</p>
+                    <p>4.3</p>
+                    <p>4.4</p>
+                  </div>
+                </h3>
+              </div>
+              <div class="food-content">
+                <div id="food-overview-wrapper" class="food-overview-wrapper">
+                  <div class="food-overview active">
+                    <h3>Chef Reza1</h3>
+                    <span>Shushi Tei</span>
+                    <p>Designer myambi chef,  setelgh menikahi gadis south mountain yglama dinanti nanti.</p>
+                  </div>
+                  <div class="food-overview">
+                    <h3>Chef K Semy2</h3>
+                    <span>Komuntas Pecinta Birutu</span>
+                    <p>Dosen pembimbingku kok asem tenan yo rek, mosok ket wingi ra teko. su!! su!!.</p>
+                  </div>
+                  <div class="food-overview">
+                    <h3>Chef Reza3</h3>
+                    <span>Shushi Tei</span>
+                    <p>Designer myambi chef,  setelgh menikahi gadis south mountain yglama dinanti nanti.</p>
+                  </div>
+                  <div class="food-overview">
+                    <h3>Chef Reza4</h3>
+                    <span>Shushi Tei</span>
+                    <p>Designer myambi chef,  setelgh menikahi gadis south mountain yglama dinanti nanti.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="like-button">
+                <a href="#" id="likes">
+                  <i class="ri-thumb-up-fill"></i>
+                  <p>36 likes</p>
+                </a>
+                <a href="#">
+                  <i class="ri-thumb-down-line"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

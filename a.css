@@ -1,0 +1,984 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Luckiest+Guy&display=swap');
+
+/* Animation Custom */
+
+@keyframes circle-active {
+  from {
+    top: -1000px;
+    left: -350px;
+    opacity: 0;
+  }
+  to {
+    top: -700px;
+    left: -200px;
+    opacity: 1;
+  }
+}
+
+@keyframes circle-hidden {
+  from {
+    top: -700px;
+    left: -200px;
+    opacity: 1;
+  }
+  to {
+    top: -1000px;
+    left: -350px;
+    opacity: 0;
+  }
+}
+
+@keyframes menu-active-ul {
+  from {
+    opacity: 0;
+    transform: translateY(150%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes menu-hidden-ul {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(150%);
+  }
+}
+
+@keyframes menu-active-a {
+  from {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes menu-hidden-a {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+}
+
+@keyframes food-list-active {
+  from {
+    opacity: 0;
+    left: 10%;
+  }
+  to {
+    opacity: 1;
+    left: 0%;
+  }
+}
+
+@keyframes food-list-hidden {
+  from {
+    opacity: 1;
+    left: 0%;
+  }
+  to {
+    opacity: 0;
+    left: 10%;
+  }
+}
+
+@keyframes food-info-active {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes food-info-hidden {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}
+
+
+@keyframes food-overview-active {
+  0%, 10%{
+    width: 0%;
+  }
+  90%, 100% {
+    width: 100%;
+  }
+}
+
+@keyframes food-overview-hidden {
+  0%, 10%{
+    width: 100%;
+  }
+  90%, 100% {
+    width: 0%;
+  }
+}
+
+@keyframes r-food-info-hidden-h1 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes r-food-info-active-h1 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes r-food-info-hidden-h1-before {
+  from {
+    opacity: 1;
+    left: 0;
+  }
+  to {
+    opacity: 0;
+    left: -100%;
+  }
+}
+
+@keyframes r-food-info-active-h1-before {
+  from {
+    opacity: 0;
+    left: -100%;
+  }
+  to {
+    opacity: 1;
+    left: 0%;
+  }
+}
+
+@keyframes r-rate-active {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+    z-index: 2;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+    z-index: 3;
+  }
+}
+
+@keyframes r-rate-hidden {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+    z-index: 3;
+  }
+  to {
+    
+    transform: translateY(-50%);
+    opacity: 0;
+    z-index: 2;
+  }
+}
+
+@keyframes r-food-active {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+    z-index: 2;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+    z-index: 3;
+  }
+}
+
+@keyframes r-food-hidden {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+    z-index: 3;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: 2;
+  }
+}
+
+@keyframes box-content-active {
+  from {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes box-content-hidden {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a, li, ul {
+  text-decoration: none;
+  list-style: none;
+  color: #333;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  background-color: #D0D0D0;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+main .box {
+  display: flex;
+}
+
+.box .left {
+  flex-basis: 70%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.box .left .top {
+  flex-basis: 60%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  inset: 0;
+}
+
+.box .left .top .circle-container {
+  --index: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+  transform: rotate(calc(var(--index) * 90deg));
+  transition: all 1s ease-in-out;
+}
+
+.box.active .left .top #circle-container {
+  animation: 1s ease-in-out .3s circle-active forwards;
+}
+
+.box.hidden .left .top #circle-container {
+  animation: 1s ease-in .3s circle-hidden forwards;
+}
+
+.box .left .top .circle-container .circle {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  background: linear-gradient(45deg, #C0C4C6, #C3CAC8 100%), linear-gradient(135deg, #C0C4C6, #A6A8A7), linear-gradient(-45deg, #DAC7B4, #D6C2B9), linear-gradient(-135deg, #D6C2B9, #A6A8A8);
+  background-size: 50% 50%;
+  background-position: 0% 0%, 0% 100%, 100% 0%, 100% 100%;
+  background-repeat: no-repeat; 
+}
+
+.box .left .top .circle-container .circle .overlay {
+  --circle-radius: 390px;
+  --border-width: 105px;
+    
+  height: 100%;
+  width: 100%;
+  --mask: radial-gradient(circle farthest-side at center center, #000 var(--circle-radius), transparent calc(var(--circle-radius) + 2px) calc(var(--circle-radius) + 2px + var(--border-width)), #000 calc(var(--circle-radius) + 2px + var(--border-width) + 2px) 100%) 50% 50%/100% 100% no-repeat;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  background-color: #D0D0D0;
+}
+
+.box .left .top .circle-container .circle img {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  transition: all 3s ease-in-out;
+}
+
+.box .left .top .circle-container .circle img:nth-child(2) {
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.box .left .top .circle-container .circle img.active:nth-child(2),
+.box .left .top .circle-container .circle img.active:nth-child(4) {
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.box .left .top .circle-container .circle img:nth-child(3) {
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.box .left .top .circle-container .circle img.active:nth-child(3) {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.box .left .top .circle-container .circle img:nth-child(4) {
+  left: 50%;
+  bottom: -10%;
+  transform: translateX(-50%) rotate(0deg);
+}
+
+.box .left .top .circle-container .circle img:nth-child(5) {
+  left: -10%;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.box .left .top .circle-container .circle img.active:nth-child(5) {
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.box .left .top .food-overview {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 500px;
+  padding: 0 30px;
+  z-index: 1;
+}
+
+.box .left .top .food-overview .pagination {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.box.active .left .top .food-overview .pagination {
+  animation: food-info-active 1s ease-in .3s forwards;
+}
+
+.box.hidden .left .top .food-overview .pagination {
+  animation: food-info-hidden 1s ease-in .3s forwards;
+}
+
+.box .left .top .food-overview .pagination li {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #4b504e;
+  transition: all .3s ease;
+}
+
+.box .left .top .food-overview .pagination li.active {
+  height: 25px;
+  border-radius: 10px;
+}
+
+.box .left .top .food-overview .food-content {
+  width: 100%;
+  overflow: hidden;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.box.active .left .top .food-overview .food-content .food-info-wrapper {
+  animation: food-info-active 1s ease-in-out .3s forwards;
+}
+
+.box.hidden .left .top .food-overview .food-content .food-info-wrapper {
+  animation: food-info-hidden 1s ease-in-out .3s forwards;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  transition:  all .2s ease;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.active {
+  opacity: 1;
+  z-index: 3;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info h5 {
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+  color: transparent;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info h5::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: #333;
+  overflow: hidden;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.active h5::before {
+  animation: food-overview-active .4s ease-in-out forwards;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.hidden h5::before {
+  animation: food-overview-hidden .4s ease-in-out forwards !important;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info h1.food-name {
+  width: 100%;
+  font-family: "Josefin Slab", serif;
+  font-weight: 200;
+  font-size: 55px;
+  text-transform: uppercase;
+  position: relative;
+  color: transparent;
+  overflow: hidden;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.active h1.food-name {
+  animation: r-food-info-active-h1 .3s ease-in-out forwards;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.hidden h1.food-name {
+  animation: r-food-info-hidden-h1 .4s ease-in-out forwards !important;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.active h1::before {
+  animation: r-food-info-active-h1-before .3s ease-in-out forwards;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.hidden h1::before {
+  animation: r-food-info-hidden-h1-before .4s ease-in-out forwards !important;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info p {
+  width: 100%;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-size: 65px;
+  position: relative;
+  color: transparent;
+  overflow: hidden;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info p::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: #333;
+  overflow: hidden;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.active p::before {
+  animation: food-overview-active .4s linear forwards;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info.hidden p::before {
+  animation: food-overview-hidden .4s ease-in-out forwards !important;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info .food-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 60px;
+  font-size: 12px;
+  padding: 0px 20px;
+  opacity: 0;
+  transform: translateX(40%) translateY(0);
+  transition: all 1s ease-in;
+}
+
+.box.active .left .top .food-overview .food-content .food-info-wrapper .food-info .food-action {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+.box.active .left .top .food-overview .food-content .food-info-wrapper .food-info:first-child .food-action {
+  opacity: 1;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info .food-action a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info .food-action a:hover {
+  background-color: #dbdfe0;
+}
+
+.box .left .top .food-overview .food-content .food-info-wrapper .food-info .food-action i {
+  font-size: 16px;
+}
+
+.box .left .bottom {
+  flex-basis: 40%;
+  width: 100%;
+  height: 100%;
+  padding-left: 80px;
+}
+
+.box .left .bottom .food-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.box .left .bottom .food-actions .food-list {
+  position: relative;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.box.active .left .bottom .food-actions .food-list {
+  animation: food-list-active 1s ease-in .3s forwards;
+}
+
+.box.hidden .left .bottom .food-actions .food-list {
+  animation: food-list-hidden 1s ease-in .3s forwards;
+}
+
+.box .left .bottom .food-actions .food-list .slide-wrapper {
+  display: flex;
+  position: relative;
+  left: 20%;
+  padding: 0.75rem;
+}
+
+.box .left .bottom .food-actions .food-list .slide-wrapper * {
+  z-index: 3;
+}
+
+.slide-wrapper input[type="radio"] {
+  display: none;
+}
+
+.box .left .bottom .food-actions .food-list .slide-wrapper .slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 120px;
+  width: 120px;
+  margin: 5px 10px;
+  font-size: .8rem;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+}
+
+.box .left .bottom .food-actions .food-list .slide-wrapper .slide img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.slide-wrapper input[id="radio-1"]:checked ~ .glider {
+  transform: translateX(0);
+}
+
+.slide-wrapper input[id="radio-2"]:checked ~ .glider {
+  transform: translateX(calc(100% + 40px));
+}
+
+.slide-wrapper input[id="radio-3"]:checked ~ .glider {
+  transform: translateX(calc(200% + 80px));
+}
+
+.slide-wrapper input[id="radio-4"]:checked ~ .glider {
+  transform: translateX(calc(300% + 120px));
+}
+
+.glider {
+  height: 140px;
+  width: 100px;
+  margin: 5px 20px;
+  position: absolute;
+  display: flex;
+  background-color: #e5e5e5;
+  z-index: 2 !important;
+  border-radius: 15px;
+  transition: all 1s ease-out;
+}
+
+.box .left .bottom .food-actions .food-list>button {
+  position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    outline: none;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.box .left .bottom .food-actions .food-list button#slide-button-prev {
+  left: 10%;
+}
+
+.box .left .bottom .food-actions .food-list button#slide-button-next {
+  right: 10%;
+}
+
+.box .left .bottom .food-actions .food-list>button i {
+  font-size: 40px;
+}
+
+.box .left .bottom .food-actions .menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.box.active .left .bottom .food-actions .menu ul {
+  animation: menu-active-ul 1s .3s ease-in forwards;
+}
+
+.box.hidden .left .bottom .food-actions .menu ul {
+  animation: menu-hidden-ul 1s .3s ease-in forwards;
+}
+
+.box .left .bottom .food-actions .menu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  opacity: 0;
+}
+
+.box .left .bottom .food-actions .menu ul li a {
+  padding: 9px 13px;
+  border-radius: 15px;
+  font-size: 25px;
+  transition: all .3s ease-in-out;
+}
+
+.box .left .bottom .food-actions .menu ul li a.active {
+  background-color: #b4b2b2;
+}
+
+.box .left .bottom .food-actions .menu ul li a:hover {
+  background-color: #b4b2b2;
+}
+
+.box .left .bottom .food-actions .menu>a {
+  background-color: #fff;
+  padding: 10px 15px;
+  margin-left: 30px;
+  border-radius: 100%;
+  font-size: 25px;
+  box-shadow: 0px 10px 10px #a8a6a6;
+  opacity: 0;
+}
+
+.box.active .left .bottom .food-actions .menu>a {
+  animation: menu-active-a 1s .3s ease-in forwards;
+}
+
+.box.hidden .left .bottom .food-actions .menu>a {
+  animation: menu-hidden-a 1s .3s ease-in forwards;
+}
+
+.box .right {
+  flex-basis: 30%;
+  width: 100%;
+  height: 100%;
+  padding: 30px 0px;
+}
+
+.box .right .search {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 35px;
+  margin-bottom: 30px;
+  opacity: 0;
+  font-size: 20px;
+}
+
+.box.active .right .search {
+  animation: food-info-active 1s ease-in .3s forwards;
+}
+
+.box.hidden .right .search {
+  animation: food-info-hidden 1s ease-in .3s forwards;
+}
+
+.box .right .box-details {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.box .right .box-details .box-content {
+  width: 70%;
+  height: 60%;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #e8e8e8;
+  opacity: 0;
+}
+
+.box.active .right .box-details .box-content {
+  animation: box-content-active 1.3s ease-in-out forwards
+}
+
+.box.hidden .right .box-details .box-content {
+  animation: box-content-hidden 1.3s ease-in-out forwards
+}
+
+.box .right .box-details .box-content .tab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.box .right .box-details .box-content .tab a {
+  color: #9b9b9b;
+}
+
+.box .right .box-details .box-content .tab a.active {
+  color: #6b6b6b;
+}
+
+.box .right .box-details .box-content .rate-count {
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+  position: relative;
+  
+  --background-color: #FFA961;
+  --color: #333;
+}
+
+.box .right .box-details .box-content .rate-count>div {
+  width: 40px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: var(--background-color);  
+  color: var(--color);
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 10px;
+  transition: all .5s linear;
+}
+
+.box .right .box-details .box-content .rate-count h3 {
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  font-size: 35px;
+  height: 52px;
+  overflow: hidden;
+}
+
+.box .right .box-details .box-content .rate-count h3 div {
+  width: 60px;
+  height: 100%;
+  position: relative;
+}
+
+.box .right .box-details .box-content .rate-count h3 div p {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.box.hidden .right .box-details .box-content .rate-count h3 div p:first-child {
+  opacity: 1;
+}
+
+.box.active .right .box-details .box-content .rate-count h3 div p.active {
+  animation: r-rate-active .5s ease-in forwards;
+
+}
+
+.box.active .right .box-details .box-content .rate-count h3 div p.hidden {
+  animation: r-rate-hidden .5s ease-in forwards !important;
+}
+
+
+.box .right .box-details .box-content .food-content {
+  width: 100%;
+  overflow: hidden;
+}
+
+.box .right .box-details .box-content .food-content .food-overview-wrapper {
+  width: 100%;
+  height: 125px;
+  position: relative;
+}
+
+.box .right .box-details .box-content .food-content .food-overview-wrapper .food-overview {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.box.hidden .right .box-details .box-content .food-content .food-overview-wrapper .food-overview:first-child {
+  opacity: 1;
+}
+
+.box.active .right .box-details .box-content .food-content .food-overview-wrapper .food-overview.active {
+  animation: r-food-active .5s ease-in-out forwards;
+}
+
+.box.active .right .box-details .box-content .food-content .food-overview-wrapper .food-overview.hidden {
+  animation: r-food-hidden .5s ease-in-out forwards !important;
+}
+
+.box .right .box-details .box-content .food-content .food-overview-wrapper div h3 {
+  color: #333;
+  padding-bottom: 0;
+}
+
+.box .right .box-details .box-content .food-content .food-overview-wrapper div span {
+  font-size: 11px;
+  color: #9b9b9b;
+}
+
+.box .right .box-details .box-content .food-content .food-overview-wrapper div p {
+  font-size: 13px;
+  color: #6b6b6b;
+  text-align: justify;
+  margin-top: 7px;
+  padding-right: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.box .right .box-details .box-content .like-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.box .right .box-details .box-content .like-button a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #DCDCDC;
+  transition: all .3s ease-in-out;
+}
+
+.box .right .box-details .box-content .like-button a i {
+  font-size: 20px;
+}
+
+.box .right .box-details .box-content .like-button a p {
+  margin-left: 8px;
+  font-size: 12px;
+  width: fit-content;
+  overflow: hidden;
+  transition: width .7s ease, margin-left .7s ease;
+}
+
+.box .right .box-details .box-content .like-button a p.empty {
+  width: 0;
+  margin-left: 0;
+}
